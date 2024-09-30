@@ -1,0 +1,46 @@
+<%- include("partials/header") %>
+<body class="blog-bg">
+    <div class="blog" style="min-height: 92vh;">  
+        <%- include('partials/navbar') %>
+        <% if (locals.formData) { %>
+            <% formData["order"].forEach(input => { %>
+                <% switch (input) {
+                    case "title": %>
+                        <h4 class="blog-title"><%= formData[input] %></h4>
+                    <%  break; 
+                    case "heading": %>
+                        <% if(Array.isArray(formData[input])) {%>
+                            <h5 class="heading"><%= formData[input][0] %></h5>
+                            <% formData[input].shift(); %>
+                        <% } else { %>
+                            <h5 class="heading"><%= formData[input] %></h5>
+                        <% } %>
+                    <% break;
+                    case "image": %>
+                        <% if(Array.isArray(formData["filesBase64"])) {%>
+                            <img src="<%= formData["filesBase64"][0]%>" alt="Upload image">
+                            <% formData["filesBase64"].shift(); %>
+                        <% } else { %>
+                            <img src="<%= formData["filesBase64"] %>" alt="Upload image">
+                        <% } %>
+                    <% break;
+                    default: %>
+                        <% if(Array.isArray(formData[input])) {%>
+                            <p class="para"><%= formData[input][0] %></p>
+                            <% formData[input].shift(); %>
+                        <% } else { %>
+                            <p class="para"><%= formData[input] %></p>
+                        <% } %>
+                    <% break; %>
+                <% }; %>
+            <% }); %>
+        <% } else {%>
+            <p class="para">
+                Your post current have 0 post.   
+            </p>
+        <% } %>
+    </div>
+    <%- include('partials/footer') %>
+    <script src="/styles/index.js"></script>
+</formData>
+

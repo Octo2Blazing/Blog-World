@@ -1,0 +1,88 @@
+
+.current-post{
+    margin-top: 160px;
+    background-color: beige;
+    padding: 8px 14px;
+}
+.post-container{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(338px,1fr));
+    gap: 1rem;
+}
+.post{
+    border: 1px solid black;
+    border-radius:10px ;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    height: 200px;
+}
+.post a{
+    text-decoration: none;
+    color: white;
+    height: 100%;
+}
+.post img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.post>.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding:5px 10px;
+    background-color: rgba(0, 0, 0, 0.724);
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-size: 1.7rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.post h4{
+    margin: 0;
+    padding-right: 15px;
+}
+.post .three-dot{
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    position: relative;
+    transition: all .4s ease;
+}
+.three-dot .btns{
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 90px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+.three-dot .btns a{
+    color: black;
+    display: block;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 35px;
+}
+.three-dot .btns a > svg{
+    width: 15px;
+}
+.three-dot .btns a:hover{
+    background-color: #ddd;
+}
+.three-dot:hover .btns{
+    display: block;
+    color: black;
+}

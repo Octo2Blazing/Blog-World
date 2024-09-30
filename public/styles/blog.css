@@ -1,0 +1,57 @@
+body{
+    font-family: 'Inter';
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.blog-hero{
+    display: flex;
+    align-items: center;
+    margin-top: 102px;
+    height: 90vh;
+}
+.blog-hero>.content{
+    flex: 1;
+    padding-left: 8%;
+}
+.blog-hero>.content>a{
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.blog-hero>.aside{
+    flex: 0 1 60%;
+    height: 70vh;
+    background-color:  #eef2ef;
+    border-radius: 20px;
+    display: flex;
+}
+.blog-hero>.aside>h1{
+    margin: auto 10%;
+    font-size: 3.6rem;
+    font-weight: 900;
+}
+
+@media (max-width: 714px){
+    .blog-hero{
+        display: block;
+        text-align: center;
+        
+    }
+    .blog-hero>.content>a{
+        display: inline-block;
+        /* width: 200px; */
+        text-align: left;
+        margin-bottom: 10px;
+        margin-right: 20px;
+        background-color: #eef2ef;
+        padding:10px 20px;
+        border-radius: 10px;
+    }
+    .blog-hero>.aside{
+        margin-top: 40px;
+    }
+}
